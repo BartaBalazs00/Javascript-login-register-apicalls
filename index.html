@@ -9,59 +9,65 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <form class="updateDeveloper">
-        <div class="row">
-            <div>
-                <label for="input-name">Name</label>
-                <input type="text" id="input-name" class="form-control" placeholder="Name">
+    <div class="container mt-5" style="max-width: 400px;">
+        <div id="login-section">
+          <h3 class="mb-3 text-center"><i class="bi bi-box-arrow-in-right"></i> Login</h3>
+      
+          <div id="login-alert" class="alert alert-danger d-none" role="alert">
+            Invalid username or password!
+          </div>
+      
+          <form id="login-form">
+            <div class="mb-3">
+              <label for="login-username" class="form-label">Username</label>
+              <input type="text" class="form-control" id="login-username" required>
             </div>
-            <div>
-                <label for="input-email">Email</label>
-                <input type="text" id="input-email" class="form-control" placeholder="Email">
+            <div class="mb-3">
+              <label for="login-password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="login-password" required>
             </div>
-            <div>
-                <label for="input-job">Job</label>
-                <input type="text" id="input-job" class="form-control" placeholder="Job">
-            </div>
-            <div>
-                <label for="input-age">Age</label>
-                <input type="number" id="input-age" class="form-control" placeholder="Age">
-            </div>
-            <div>
-                <label for="input-salary">Salary</label>
-                <input type="number" id="input-salary" class="form-control" placeholder="Salary">
-            </div>
-            <div>
-                <label for="input-skills">Skills</label>
-                <input type="text" id="input-skills" class="form-control" placeholder="Skills">
-            </div>
-            <div>
-                <button type="button" class="btn btn-success" id="update-developer-btn">Update Developer</button>
-            </div>
+            <button type="button" id="login-btn" class="btn btn-primary w-100">Login</button>
+          </form>
+      
+          <p class="text-center mt-3">
+            Nincs még fiókod?
+            <a href="#" id="show-register">Regisztrálj!</a>
+          </p>
         </div>
-    </form>
-    <form class="createDeveloper">
-        <div class="row">
-            <div class="col-9">
-                <textarea id="inputTextArea"></textarea>
+      
+        <div id="register-section" class="d-none">
+          <h3 class="mb-3 text-center"><i class="bi bi-person-plus"></i> Register</h3>
+      
+          <form id="register-form">
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input type="text" class="form-control" id="username" required>
             </div>
-            <div class="col-3">
-                <button type="button" id="add-new-developer-btn" class="btn btn-success">Add</button>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" required>
             </div>
+            <div class="mb-3">
+              <label for="password-again" class="form-label">Password again</label>
+              <input type="password" class="form-control" id="password-again" required>
+            </div>
+            <div class="mb-3">
+              <label for="firstname" class="form-label">First name</label>
+              <input type="text" class="form-control" id="firstname" required>
+            </div>
+            <div class="mb-3">
+              <label for="lastname" class="form-label">Last name</label>
+              <input type="text" class="form-control" id="lastname" required>
+            </div>
+            <button type="button" id="register-btn" class="btn btn-primary w-100" disabled>Register</button>
+          </form>
+      
+          <p class="text-center mt-3">
+            Van már fiókod?
+            <a href="#" id="show-login">Jelentkezz be!</a>
+          </p>
         </div>
-    </form>
-    <div class="dropdown">
-        <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown">
-          Sort by Job
-        </button>
-        <ul class="dropdown-menu">
-        </ul>
       </div>
-    <main>
-        <div class="row developers">
-        </div>
-    </main>
-    <script type="module" src="app.js"></script>
-    
+    <script type="module" src="register.js"></script>
 </body>
 </html>
