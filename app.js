@@ -4,10 +4,15 @@ import { Renderer } from "./renderer.js";
 import { Job } from "./job.js";
 import { createJobArray } from "./jobArrayCreator.js";
 import { JobRenderer } from "./jobRenderer.js";
+import { GDPR } from "./gdpr.js";
 
 if (localStorage.getItem("loggedInUser") == null){
     window.location.href = "index.html";
 }
+
+let gdpr = new GDPR();
+gdpr.init();
+
 let main = document.querySelector('.developers');
 let developers = await createDeveloperArray();
 let renderer = new Renderer();
