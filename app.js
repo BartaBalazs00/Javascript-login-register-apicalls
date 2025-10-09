@@ -35,7 +35,7 @@ let skillsField = document.getElementById('input-skills');
 document.querySelector("#add-new-developer-btn").addEventListener('click', addNewDeveloper)
 document.querySelector("#update-developer-btn").addEventListener('click', updateDeveloper)
 const textarea = document.getElementById('inputTextArea');
-const ID = crypto.randomUUID()
+
 const jsonData ={
 	"name": "BB-John Doe",
 	"email": "john@doe.com",
@@ -138,8 +138,9 @@ function deleteDeveloper(e){
 //CREATE
 function addNewDeveloper(){
     let parsedJson = JSON.parse(textarea.value)
+    const UUID = crypto.randomUUID()
     let dev = new Developer(
-        parsedJson.id,
+        UUID,
         parsedJson.name,
         parsedJson.email,
         parsedJson.job,
